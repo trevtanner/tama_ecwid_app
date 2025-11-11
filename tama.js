@@ -11,7 +11,7 @@ Ecwid.OnAPILoaded.add(function () {
       const newBuyButton = document.createElement("button");
       newBuyButton.className = "new-buy-button disabled";
       newBuyButton.id = "new-buy-btn";
-      newBuyButton.textContent = "Available In Store Only"; // Initial message
+      newBuyButton.textContent = "Available In-Store Only"; // Initial message
       newBuyButton.disabled = true; // Disabled by default
       customContainer.appendChild(newBuyButton);
 
@@ -34,7 +34,7 @@ Ecwid.OnAPILoaded.add(function () {
       window.ec = window.ec || Object();
       window.ec.storefront = window.ec.storefront || Object();
       window.ec.storefront.product_details_show_buy_button = false;
-      window.ec.storefront.product_details_show_product_price = false;
+      // window.ec.storefront.product_details_show_product_price = false;
       Ecwid.refreshConfig && Ecwid.refreshConfig();
     }
   });
