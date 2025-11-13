@@ -28,7 +28,8 @@ Ecwid.OnAPILoaded.add(function () {
       const currentPriceString = productPriceElement.getAttribute("content");
       const currentPriceNumber = parseFloat(currentPriceString);
 
-      const stringingServiceId = 714272866;
+      const stringingServiceId = 794853374;
+
       const customStringing = {
         stringing: 0,
         mesh: "",
@@ -38,7 +39,7 @@ Ecwid.OnAPILoaded.add(function () {
         shooterSetup: "",
         pocketPlacement: "",
         stringingComments: "",
-        totalPrice: currentPriceNumber + 29.99,
+        totalPrice: currentPriceNumber + 34.99,
       };
 
       function createCustomDropdown(
@@ -273,8 +274,8 @@ Ecwid.OnAPILoaded.add(function () {
         const customBtn = document.createElement("button");
         customBtn.className = "option-button";
         customBtn.id = "custom-btn";
-        customBtn.textContent = "Custom Stringing (+29.99)";
-        customBtn.dataset.tooltip = "+$29.99";
+        customBtn.textContent = "Custom Stringing (+34.99)";
+        customBtn.dataset.tooltip = "+$34.99";
 
         optionsContainer.appendChild(unstrungBtn);
         optionsContainer.appendChild(customBtn);
