@@ -390,6 +390,14 @@ Ecwid.OnAPILoaded.add(function () {
         { text: "StringKing Black 5s (+29.99)", id: 4, price: 29.99 },
         { text: "ECD HERO 4.0 White (+24.99)", id: 5, price: 24.99 },
         { text: "ECD HERO 4.0 Black (+24.99)", id: 6, price: 24.99 },
+        { text: "StringKing White 4x (+24.99)", id: 1, price: 24.99 },
+        { text: "StringKing White 4s (+24.99)", id: 2, price: 24.99 },
+        { text: "StringKing Black 4x (+24.99)", id: 3, price: 24.99 },
+        { text: "StringKing Black 4s (+24.99)", id: 4, price: 24.99 },
+        { text: "StringKing White 3x (+19.99)", id: 1, price: 19.99 },
+        { text: "StringKing White 3s (+19.99)", id: 2, price: 19.99 },
+        { text: "StringKing Black 3x (+19.99)", id: 3, price: 19.99 },
+        { text: "StringKing Black 3s (+19.99)", id: 4, price: 19.99 },
       ];
       createFormField(
         customContainer,
