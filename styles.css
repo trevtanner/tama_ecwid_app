@@ -286,9 +286,12 @@ select:focus {
   border-color: #3498db;
 }
 
-/* Style for the text that shows the current selection */
 #shooter-selection-display {
-  font-weight: 400; /* Make it less prominent than the label */
+  font-weight: 400;
   color: #555;
   font-size: 14x;
+}
+
+#custom-stringing-comments-input {
+padding: 0px 5px 0px 5px
 }
