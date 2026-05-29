@@ -16,14 +16,14 @@ Ecwid.OnAPILoaded.add(function () {
        Product ID is: ${page.productId}
        Page is: ${JSON.stringify(page)}
        Trying to add new field to product page...
-        `
+        `,
       );
       console.log("page:");
       // console.log(JSON.stringify(page.filterParams.attributes));
 
       const productPriceElement = document.querySelector('[itemprop="price"]');
       const priceSpan = document.querySelector(
-        ".details-product-price__value.ec-price-item"
+        ".details-product-price__value.ec-price-item",
       );
       const currentPriceString = productPriceElement.getAttribute("content");
       const currentPriceNumber = parseFloat(currentPriceString);
@@ -47,7 +47,7 @@ Ecwid.OnAPILoaded.add(function () {
         labelText,
         inputId,
         options,
-        stringingKey
+        stringingKey,
       ) {
         const fieldDiv = document.createElement("div");
         fieldDiv.className = "form-field";
@@ -167,7 +167,7 @@ Ecwid.OnAPILoaded.add(function () {
         inputType,
         inputId,
         options = [],
-        stringingKey
+        stringingKey,
       ) {
         const fieldDiv = document.createElement("div");
         fieldDiv.className = "form-field";
@@ -235,7 +235,7 @@ Ecwid.OnAPILoaded.add(function () {
         inputType,
         inputId,
         options = [],
-        stringingKey
+        stringingKey,
       ) {
         // If it's a color dropdown, use the new custom function and then exit.
         if (options.some((opt) => opt.color)) {
@@ -244,7 +244,7 @@ Ecwid.OnAPILoaded.add(function () {
             labelText,
             inputId,
             options,
-            stringingKey
+            stringingKey,
           );
         } else {
           // For all other dropdowns, proceed with the original logic.
@@ -254,7 +254,7 @@ Ecwid.OnAPILoaded.add(function () {
             inputType,
             inputId,
             options,
-            stringingKey
+            stringingKey,
           );
         }
       }
@@ -356,7 +356,7 @@ Ecwid.OnAPILoaded.add(function () {
         const meshSelect = document.getElementById("custom-mesh-input");
         const sidewallSelect = document.getElementById("custom-sidewall-input");
         const shooterColorSelect = document.getElementById(
-          "custom-shooters-input"
+          "custom-shooters-input",
         );
         // const shooterSetupSelect = document.getElementById(
         //   "custom-shooter-setup-select"
@@ -365,7 +365,7 @@ Ecwid.OnAPILoaded.add(function () {
         //   "custom-pocket-placement-input"
         // );
         const commentsInput = document.getElementById(
-          "custom-stringing-comments-input"
+          "custom-stringing-comments-input",
         );
 
         const newBuyButton = document.getElementById("new-buy-btn");
@@ -402,7 +402,7 @@ Ecwid.OnAPILoaded.add(function () {
           // Update the content attribute on the div
           productPriceElement.setAttribute(
             "content",
-            customStringing.totalPrice.toFixed(2)
+            customStringing.totalPrice.toFixed(2),
           );
 
           // Update the text content of the span
@@ -425,10 +425,10 @@ Ecwid.OnAPILoaded.add(function () {
 
         // Updated listener for the radio button group
         const shooterSetupContainer = document.querySelector(
-          ".image-radio-wrapper-shooter-setup" // Use the unique class
+          ".image-radio-wrapper-shooter-setup", // Use the unique class
         );
         const shooterSelectionDisplay = document.getElementById(
-          "shooter-setup-display"
+          "shooter-setup-display",
         );
         shooterSetupContainer.addEventListener("change", (event) => {
           if (event.target.name === "shooter-setup") {
@@ -441,10 +441,10 @@ Ecwid.OnAPILoaded.add(function () {
 
         // Updated listener for the radio button group
         const pocketSetupContainer = document.querySelector(
-          ".image-radio-wrapper-pocket-placement" // Use the unique class
+          ".image-radio-wrapper-pocket-placement", // Use the unique class
         );
         const pocketSelectionDisplay = document.getElementById(
-          "pocket-placement-display"
+          "pocket-placement-display",
         );
         pocketSetupContainer.addEventListener("change", (event) => {
           if (event.target.name === "pocket-placement") {
@@ -492,7 +492,7 @@ Ecwid.OnAPILoaded.add(function () {
         "* Mesh:",
         "select",
         "custom-mesh-input",
-        meshOptions
+        meshOptions,
       );
       const sidewallColorOptions = [
         { id: "", text: "Select Sidewall Color" },
@@ -511,7 +511,7 @@ Ecwid.OnAPILoaded.add(function () {
         "* Sidewall Color:",
         "select",
         "custom-sidewall-input",
-        sidewallColorOptions
+        sidewallColorOptions,
       );
       const shooterColorOptions = [
         { id: "", text: "Select Shooter Color" },
@@ -530,7 +530,7 @@ Ecwid.OnAPILoaded.add(function () {
         "* Shooter Color:",
         "select",
         "custom-shooters-input",
-        shooterColorOptions
+        shooterColorOptions,
       );
       const shooterOptions = [
         {
@@ -575,7 +575,7 @@ Ecwid.OnAPILoaded.add(function () {
         customContainer,
         "* Shooter Setup:",
         "shooter-setup", // This is the 'name' for the radio group
-        shooterOptions
+        shooterOptions,
       );
       const pocketOptions = [
         {
@@ -602,14 +602,14 @@ Ecwid.OnAPILoaded.add(function () {
         customContainer,
         "* Pocket Placement:",
         "pocket-placement", // This is the 'name' for the radio group
-        pocketOptions
+        pocketOptions,
       );
 
       createFormField(
         customContainer,
         "Stringing Comments:",
         "textarea",
-        "custom-stringing-comments-input"
+        "custom-stringing-comments-input",
       );
 
       // Hide the form by default
@@ -626,21 +626,21 @@ Ecwid.OnAPILoaded.add(function () {
       // Find a place on the page to inject your new custom field
       // For example, right before the "Add to Bag" button.
       const productDetailsActionPanel = document.querySelector(
-        ".product-details__action-panel"
+        ".product-details__action-panel",
       );
       if (productDetailsActionPanel) {
         // The exact selector may vary, use your browser's developer tools to find the right one.
         productDetailsActionPanel.parentElement.insertBefore(
           buttonContainer,
-          productDetailsActionPanel
+          productDetailsActionPanel,
         );
         productDetailsActionPanel.parentElement.insertBefore(
           customContainer,
-          productDetailsActionPanel
+          productDetailsActionPanel,
         );
       } else {
         console.error(
-          "Could not find the target element to inject the form fields."
+          "Could not find the target element to inject the form fields.",
         );
       }
 
@@ -659,7 +659,7 @@ Ecwid.OnAPILoaded.add(function () {
         customStringing.stringing = 0;
         productPriceElement.setAttribute(
           "content",
-          currentPriceNumber.toFixed(2)
+          currentPriceNumber.toFixed(2),
         );
         priceSpan.textContent = `$${currentPriceNumber.toFixed(2)}`;
 
@@ -682,7 +682,7 @@ Ecwid.OnAPILoaded.add(function () {
         customStringing.stringing = 1;
         productPriceElement.setAttribute(
           "content",
-          customStringing.totalPrice.toFixed(2)
+          customStringing.totalPrice.toFixed(2),
         );
         priceSpan.textContent = `$${customStringing.totalPrice.toFixed(2)}`;
 
@@ -795,7 +795,7 @@ Ecwid.OnAPILoaded.add(function () {
           },
           function (errorCallback) {
             console.log("Failed to add comments");
-          }
+          },
         );
       });
     }
@@ -816,18 +816,33 @@ Ecwid.OnAPILoaded.add(function () {
       customContainer.appendChild(newBuyButton);
 
       const productDetailsActionPanel = document.querySelector(
-        ".product-details__action-panel"
+        ".product-details__action-panel",
       );
       if (productDetailsActionPanel) {
         productDetailsActionPanel.parentElement.insertBefore(
           customContainer,
-          productDetailsActionPanel
+          productDetailsActionPanel,
         );
       } else {
         console.error(
-          "Could not find the target element to inject the form fields."
+          "Could not find the target element to inject the form fields.",
         );
       }
+
+      const priceDiv = document.querySelector(
+        ".product-details__product-price-row",
+      );
+      priceDiv.className = "hide-element";
+
+      const qtySelectDiv = document.querySelector(
+        ".details-product-purchase__qty", // Use the unique class
+      );
+      qtySelectDiv.className = "hide-element";
+
+      const addToBagDiv = document.querySelector(
+        ".details-product-purchase__add-to-bag", // Use the unique class
+      );
+      addToBagDiv.className = "hide-element";
 
       //Design Configs
 
