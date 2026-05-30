@@ -829,28 +829,23 @@ Ecwid.OnAPILoaded.add(function () {
         );
       }
 
-      const priceDiv = document.querySelector(
-        ".product-details__product-price-row",
-      );
-      priceDiv.className = "hide-element";
+      // const priceDiv = document.querySelector(
+      //   ".product-details__product-price-row",
+      // );
+      // priceDiv.className = "hide-element";
 
       const qtySelectDiv = document.querySelector(
-        ".details-product-purchase__qty", // Use the unique class
+        ".product-details-module.product-details__action-panel.details-product-purchase", // Use the unique class
       );
       qtySelectDiv.className = "hide-element";
 
-      const addToBagDiv = document.querySelector(
-        ".details-product-purchase__add-to-bag", // Use the unique class
-      );
-      addToBagDiv.className = "hide-element";
-
       //Design Configs
-
       window.ec = window.ec || Object();
       window.ec.storefront = window.ec.storefront || Object();
       window.ec.storefront.product_details_show_buy_button = false;
-      // window.ec.storefront.product_details_show_product_price = false;
+      window.ec.storefront.product_details_show_product_price = false;
       Ecwid.refreshConfig && Ecwid.refreshConfig();
     }
   });
+  Ecwid.refreshConfig && Ecwid.refreshConfig();
 });
