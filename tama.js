@@ -1,6 +1,9 @@
 Ecwid.OnAPILoaded.add(function () {
   Ecwid.OnPageLoaded.add(function (page) {
     const unstrungCategoryId = 176140224;
+    //Design Configs
+    window.ec = window.ec || Object();
+    window.ec.storefront = window.ec.storefront || Object();
 
     //Custom Stringing Form
     if (
@@ -840,12 +843,10 @@ Ecwid.OnAPILoaded.add(function () {
       qtySelectDiv.className = "hide-element";
 
       //Design Configs
-      window.ec = window.ec || Object();
-      window.ec.storefront = window.ec.storefront || Object();
       window.ec.storefront.product_details_show_buy_button = false;
       window.ec.storefront.product_details_show_product_price = false;
-      Ecwid.refreshConfig && Ecwid.refreshConfig();
     }
   });
+  // Apply design configs
   Ecwid.refreshConfig && Ecwid.refreshConfig();
 });
